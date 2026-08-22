@@ -33,4 +33,4 @@ the fly.
 Current funcionalities:
 - Allows setting and getting colors on the fly.
 
-Refer to the [docs](docs) for more information.
+Refer to the [docs](docs) for more information. (its not done yet tho)

@@ -4,6 +4,7 @@
 #include "gearLoader/ggxxacpr_c.h"
 
 #define SETTINGS_COUNT 27
+#define MENU_ENTRIES 8
 
 uint32_t p1PaletteSelect = 0;
 uint32_t p2PaletteSelect = 0;
@@ -180,7 +181,7 @@ __attribute__ ((stdcall)) void reloadColors() {
 __attribute__ ((stdcall)) void restoreDefaults() {
 	for (int i = 0; i < (sizeof(color32List)/COLOR_ENTRY_SIZE); i++) {
         color32List[i].color = color32List[i].original;
-        PatchSafe(base+color32List[i].addr,&color32List[i].color,4);  
+        PatchSafe(base+color32List[i].addr,&color32List[i].color,4);
     }
 }
 
@@ -241,7 +242,7 @@ void createSettingsMenu(void) {
         "ZAPPA","BRIDGET","ROBO-KY","A.B.A","ORDER-SOL",
         "KLIFF","JUSTICE"
     };
-    static BaseMod_ModMenuEntry menuEntry[7] = {
+    static BaseMod_ModMenuEntry menuEntry[MENU_ENTRIES] = {
         {"Change P1 Palette",  &p1PaletteSelect,    0,21,palSlots,NULL,swapPaletteP1},
         {"Change P2 Palette",  &p2PaletteSelect,    0,21,palSlots,NULL,swapPaletteP2},
         {"Eddie Glow",         &toggleEddieGlow,    0, 1,toggle,  NULL,eddieGlowToggle},
@@ -251,5 +252,5 @@ void createSettingsMenu(void) {
 		{"Restore Defaults",   NULL,0,0,NULL,restoreDefaults,NULL},
         {"Save Settings",      NULL,0,0,NULL,saveSettings,   NULL}
     };
-    _baseModApi->ModMenu->RegisterMenuTab("POLYCHROME",menuEntry,7);
+    _baseModApi->ModMenu->RegisterMenuTab("POLYCHROME",menuEntry,MENU_ENTRIES);
 }

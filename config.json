@@ -1,6 +1,6 @@
 {
     "name": "Polychrome",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "modLoaderVersion": "0.1.0",
     "ignore": false,
     "dependencies": [
