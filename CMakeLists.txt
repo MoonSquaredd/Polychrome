@@ -2,13 +2,16 @@ cmake_minimum_required(VERSION 3.21)
 
 
 add_library(Polychrome SHARED
-    src/main.c
-    src/colors.c
+    source/main.c
+    source/colors.c
+	source/settings.c
+	source/colorset.c
 )
 target_include_directories(Polychrome PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_SOURCE_DIR}/Polychrome/src
+    ${CMAKE_SOURCE_DIR}/Mods/Polychrome/source
+	${CMAKE_SOURCE_DIR}/Mods/Polychrome/include
 )
 set_target_properties(Polychrome PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}/Polychrome
