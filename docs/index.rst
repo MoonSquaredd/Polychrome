@@ -16,6 +16,7 @@ Contents
 	:maxdepth: 1
 	:caption: Api reference
 	:name: sec-api-ref
+	:hidden:
 
 	api/api_polychrome
 	api/api_colorset
