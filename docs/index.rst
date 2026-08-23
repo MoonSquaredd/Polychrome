@@ -12,6 +12,6 @@ ability to change colors on the fly, which is this documentation's purpose.
 .. toctree::
 	:maxdepth: 1
 	:caption: Api reference
-	:name: sec-api-ref
 
-	api/index
+	api/api_polychrome
+	api/api_colorset
