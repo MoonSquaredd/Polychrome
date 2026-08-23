@@ -34,5 +34,9 @@ html_theme = 'sphinx_rtd_theme'
 
 default_dark_mode = True
 
+html_theme_options = {
+    'flyout_display': 'attached',
+}
+
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
