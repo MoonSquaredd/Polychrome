@@ -17,4 +17,5 @@ Contents
 	:caption: Api reference
 	:name: sec-api-ref
 
-	api/index
+	api/api_polychrome
+	api/api_colorset
