@@ -13,6 +13,8 @@ Contents
 --------
 
 .. toctree::
+	:maxdepth: 1
+	:caption: Api reference
+	:name: sec-api-ref
 
-	api/api_polychrome
-	api/api_colorset
+	api/index
