@@ -10,7 +10,6 @@ ability to change colors on the fly, which is this documentation's purpose.
    This project is under active development.
 
 .. toctree::
-	:hidden:
 	:maxdepth: 1
 	:caption: Api reference
 	:name: sec-api-ref
