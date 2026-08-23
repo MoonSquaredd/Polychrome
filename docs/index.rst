@@ -9,9 +9,6 @@ ability to change colors on the fly, which is this documentation's purpose.
 
    This project is under active development.
 
-Contents
---------
-
 .. toctree::
 	:maxdepth: 1
 	:caption: Api reference

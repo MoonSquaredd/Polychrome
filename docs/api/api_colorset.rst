@@ -12,7 +12,7 @@ ________________________________________________________________________________
 
 .. tabs::
 
-	.. code-tab:: c
+	.. code-block:: c
 
 		static const Polychrome_Api* _polychromeApi;
 
