@@ -2,8 +2,8 @@
 #define POLYCHROME_H
 
 #define POLYCHROME_NAME "Polychrome"
-#define POLYCHROME_API_VERSION "0.1.0"
-#define POLYCHROME_API_VERSION_NUM 0x000100
+#define POLYCHROME_API_VERSION "0.1.1"
+#define POLYCHROME_API_VERSION_NUM 0x000101
 #define POLYCHROME_CALL __stdcall
 
 #ifdef __cplusplus
@@ -17,33 +17,34 @@ extern "C" {
 #endif
 
 typedef struct PC_Color8 {
-	uint8_t r;
-	uint8_t g;
-	uint8_t b;
-	uint8_t a;
+	uint8_t r = 0;
+	uint8_t g = 0;
+	uint8_t b = 0;
+	uint8_t a = 255;
 } PC_Color8;
 
 typedef struct PC_Color {
-	float r;
-	float g;
-	float b;
-	float a;
+	float r = 0.0;
+	float g = 0.0;
+	float b = 0.0;
+	float a = 1.0;
 } PC_Color;
 
 typedef struct PC_ColorHSV {
-	float h;
-	float s;
-	float v;
+	float h = 0.0;
+	float s = 0.0;
+	float v = 0.0;
+	float a = 1.0;
 } PC_ColorHSV;
 
 #define WHITE   ((PC_Color8){0xFF,0xFF,0xFF,0xFF})
-#define RED     ((PC_Color8){0xFF,0xFF,0x00,0x00})
-#define GREEN   ((PC_Color8){0xFF,0x00,0xFF,0x00})
-#define BLUE    ((PC_Color8){0xFF,0x00,0x00,0xFF})
-#define CYAN    ((PC_Color8){0xFF,0x00,0xFF,0xFF})
-#define MAGENTA ((PC_Color8){0xFF,0xFF,0x00,0xFF})
-#define YELLOW  ((PC_Color8){0xFF,0xFF,0xFF,0x00})
-#define BLACK   ((PC_Color8){0xFF,0x00,0x00,0x00})
+#define RED     ((PC_Color8){0xFF,0x00,0x00,0xFF})
+#define GREEN   ((PC_Color8){0x00,0xFF,0x00,0xFF})
+#define BLUE    ((PC_Color8){0x00,0x00,0xFF,0xFF})
+#define CYAN    ((PC_Color8){0x00,0xFF,0xFF,0xFF})
+#define MAGENTA ((PC_Color8){0xFF,0x00,0xFF,0xFF})
+#define YELLOW  ((PC_Color8){0xFF,0xFF,0x00,0xFF})
+#define BLACK   ((PC_Color8){0x00,0x00,0x00,0xFF})
 
 typedef enum PC_ARGBColorId {
 	PC_COLOR_SCREENFLASH_BLACK,
