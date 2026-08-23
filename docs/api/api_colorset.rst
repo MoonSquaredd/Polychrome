@@ -3,12 +3,21 @@ Colorset Api
 
 An Api for getting and setting game-defined colors.
 
+Properties
+----------
+
+`uint32_t <https://en.cppreference.com/c/types/integer>`_ **size**;
+ - The size of the Api struct in bytes.
+
+`uint32_t <https://en.cppreference.com/c/types/integer>`_ **version**;
+ - The Api version.
+
 Functions
 ---------
 
 `PC_Color8 <api_polychrome.html#struct-pc-color8>`_ **GetARGBColorById**\(`int32_t <https://en.cppreference.com/c/types/integer>`_ colorId\)
 _____________________________________________________________________________________________________________________________
- Returns a color from the ARGB game-defined colors list by id. Check the enum `ARGBColorId <api_polychrome.html#enums>`__ for the list of valid ids.
+ - Returns a color from the ARGB game-defined colors list by id. Check the enum `ARGBColorId <api_polychrome.html#enums>`__ for the list of valid ids.
 
 .. code-block:: c
 
@@ -25,7 +34,7 @@ ________________________________________________________________________________
 
 `PC_Color8 <api_polychrome.html#struct-pc-color8>`_ **GetARGBColorByName**\(`char* <https://en.cppreference.com/c/language/type>`_ colorName\)
 _____________________________________________________________________________________________________________________________
- Returns a color from the ARGB game-defined colors list by name. Valid names are the same listed in colors.txt.
+ - Returns a color from the ARGB game-defined colors list by name. Valid names are the same listed in colors.txt.
 
 .. code-block:: c
 
@@ -40,6 +49,46 @@ ________________________________________________________________________________
 
 	This method can be slower than GetARGBColorById but less fragile to updates.
 
+`void <https://en.cppreference.com/c/language/type>`_ **SetARGBColorById**\(`int32_t <https://en.cppreference.com/c/types/integer>`_ colorId, `PC_Color8 <api_polychrome.html#struct-pc-color8>`_ color\)
+_____________________________________________________________________________________________________________________________
+ - Sets a color from the ARGB game-defined colors list to the one provided by id. Check the enum `ARGBColorId <api_polychrome.html#enums>`__ for the list of valid ids.
 
+.. code-block:: c
+
+	static const Polychrome_Api* _polychromeApi;
+
+	// [...]
+
+	// Set the counter hit flash color to #FF007FFF.
+	PC_Color8 newChColor = {
+		.r = 255,
+		.b = 127
+	};
+	_polychromeApi->Colorset->SetARGBColorById(PC_COLOR_COUNTER_HIT_FLASH, newChColor);
+
+.. caution::
+
+	This method is faster than SetARGBColorByName but more fragile to updates.
+
+`void <https://en.cppreference.com/c/language/type>`_ **SetARGBColorByName**\(`char* <https://en.cppreference.com/c/language/type>`_ colorName, `PC_Color8 <api_polychrome.html#struct-pc-color8>`_ color\)
+_____________________________________________________________________________________________________________________________
+ - Sets a color from the ARGB game-defined colors list to the one provided by name. Valid names are the same listed in colors.txt.
+
+.. code-block:: c
+
+	static const Polychrome_Api* _polychromeApi;
+
+	// [...]
+
+	// Set the counter hit flash color to #FF007FFF.
+	PC_Color8 newChColor = {
+		.r = 255,
+		.b = 127
+	};
+	_polychromeApi->Colorset->SetARGBColorById("CounterHitFlash", newChColor);
+
+.. caution::
+
+	This method can be slower than SetARGBColorById but less fragile to updates.
 
 

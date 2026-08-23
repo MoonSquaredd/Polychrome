@@ -23,7 +23,7 @@ Instructions:
 -----
 
 # Polychrome API
-Version: 0.1.0
+Version: 0.1.1
 
 An API containing several color related functions and the ability to change colors on
 the fly.
@@ -33,4 +33,4 @@ the fly.
 Current funcionalities:
 - Allows setting and getting colors on the fly.
 
-Refer to the [docs](docs) for more information. (its not done yet tho)
+Refer to the [docs](https://lovenus-polychrome.readthedocs.io/en/latest/index.html) for more information.
